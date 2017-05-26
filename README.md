@@ -1,2 +1,2 @@
-# React BoilerPlate V3
-Fully Featured React BoilerPlate with Foundation(Customizations enabled)
+# React Todo App
+Todo App written in React and persisted on Firebase
