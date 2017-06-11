@@ -9,7 +9,7 @@ export var AddTodo = React.createClass({
     var {dispatch} = this.props;
     if(taskRef.value.length > 0){
       //this.props.onHandleNewItem(taskRef.value);
-      dispatch(actions.addTodo(taskRef.value));
+      dispatch(actions.startAddTodo(taskRef.value));
       taskRef.value = '';
     }
   },

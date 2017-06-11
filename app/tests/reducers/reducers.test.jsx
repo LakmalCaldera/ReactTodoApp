@@ -30,15 +30,21 @@ describe('reducers', () => {
 
 
  describe('todos reducers', () => {
+
    it('should add new todo', () => {
     var action = {
       type: 'ADD_TODO',
-      text: 'Walk the Dog'
+      todo: {
+        id: 'abc123',
+        text: 'Something to do',
+        completed: false,
+        completedAt: 12232132
+      }
     }
 
     var res = reducers.todosReducer(df([]), df(action));
     expect(res.length).toBe(1);
-    expect(res[0].text).toBe(action.text);
+    expect(res[0]).toBe(action.todo);
     });
 
     it('should toggle todo', () => {

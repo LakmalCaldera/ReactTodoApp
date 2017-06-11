@@ -25,5 +25,5 @@ app.get('/data/2.5/weather', function(req,res) {
 
 // Listen to for incomming requests!!
 app.listen(PORT, function(){
-  console.log("Express Serve is up on port 3000. Proxy enabled for Weather API.");
+  console.log("Express Serve is up on port 3000.");
 });

@@ -6,6 +6,7 @@ var TestUtils = require('react-addons-test-utils');
 
 var {AddTodo} = require('AddTodo');
 //import {AddTodo} from 'AddTodo';
+import * as actions from 'actions'
 
 describe('AddTodo', () => {
   it('should exist', () => {
@@ -50,10 +51,7 @@ describe('AddTodo', () => {
       var addTodo = TestUtils.renderIntoDocument(<AddTodo dispatch={spy}/>);
       var $el = $(ReactDOM.findDOMNode(addTodo));
       addTodo.refs.task.value = 'abc';
-      var action = {
-        type: 'ADD_TODO',
-        text: addTodo.refs.task.value
-      }
+      var action = actions.startAddTodo('abc');
 
       TestUtils.Simulate.submit($el.find('form')[0]);
       expect(spy).toHaveBeenCalledWith(action);
