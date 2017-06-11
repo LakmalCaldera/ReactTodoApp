@@ -9,18 +9,22 @@ var actions = require('actions');
 var store = require('configureStore').configure();
 var TodoAPI = require('TodoAPI');
 
-store.subscribe(() => {
-  console.log('New state', store.getState());
-  var newStore = store.getState();
-  TodoAPI.setTodos(newStore.todos);
-});
+// store.subscribe(() => {
+//   console.log('New state', store.getState());
+//   var newStore = store.getState();
+//   TodoAPI.setTodos(newStore.todos);
+// });
 
-var initialTodos = TodoAPI.getTodos();
-store.dispatch(actions.addTodos(initialTodos));
+// var initialTodos = TodoAPI.getTodos();
+// store.dispatch(actions.addTodos(initialTodos));
 
 // store.dispatch(actions.addTodo('Clean the yard'));
 // store.dispatch(actions.setSearchText('yard'));
 // store.dispatch(actions.toggleShowCompleted());
+
+
+store.dispatch(actions.startAddTodos());
+
 
 $(document).foundation();
 
