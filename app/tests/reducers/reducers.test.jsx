@@ -93,4 +93,39 @@ describe('reducers', () => {
 
  });
 
+
+ describe('Auth Reducers', () => {
+   it('should record user uid into redux store on login action', () => {
+     var user = {
+       uid: "1234"
+     }
+
+     var action = {
+       type: 'LOGIN',
+       uid: user.uid
+     }
+
+     var res = reducers.authReducer(df({}), df(action));
+
+     expect(res.uid).toExist();
+     expect(res.uid).toBe(user.uid);
+   });
+
+   it('should clear user uid in redux store on logout action', () => {
+     var user = {
+       uid: "1234"
+     }
+
+     var action = {
+       type: 'LOGOUT'
+     }
+
+     var res = reducers.authReducer(df(user), df(action));
+
+     expect(res.uid).toNotExist();
+   });
+
+
+ });
+
 });
