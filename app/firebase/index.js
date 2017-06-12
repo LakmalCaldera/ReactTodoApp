@@ -3,12 +3,12 @@ import firebase from 'firebase';
 // Initialize Firebase
 try{
   var config = {
-    apiKey: "AIzaSyCiu4OWrrXHRhfVEGJRtMu_qyXGRyXSQ44",
-    authDomain: "react-redux-todo-app-8c2a4.firebaseapp.com",
-    databaseURL: "https://react-redux-todo-app-8c2a4.firebaseio.com",
-    projectId: "react-redux-todo-app-8c2a4",
-    storageBucket: "react-redux-todo-app-8c2a4.appspot.com",
-    messagingSenderId: "772962937978"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIM,
+    databaseURL: process.env.DATABASE_URL,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID
   };
 
   firebase.initializeApp(config);
@@ -16,5 +16,6 @@ try{
 
 }
 
+export var githubProvider = new firebase.auth.GithubAuthProvider();
 export var firebaseRef = firebase.database().ref();
 export default firebase;
