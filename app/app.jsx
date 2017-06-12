@@ -15,6 +15,7 @@ import router from 'app/router';
 firebase.auth().onAuthStateChanged((user) => {
   if(user){
     hashHistory.push('/todos');
+    store.dispatch(actions.startAddTodos());
   }else{
     hashHistory.push('/');
   }
@@ -33,8 +34,6 @@ firebase.auth().onAuthStateChanged((user) => {
 // store.dispatch(actions.setSearchText('yard'));
 // store.dispatch(actions.toggleShowCompleted());
 
-
-store.dispatch(actions.startAddTodos());
 
 
 $(document).foundation();
